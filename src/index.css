@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-ivory: #FFF9F6;
+  --color-ivory-soft: #FDF3EE;
+  --color-blush: #F5E6E1;
+  --color-rose-border: #EDD9D2;
+  --color-rose-gold: #D49A89;
+  --color-rose-deep: #B97664;
+  --color-plum: #2D1B2E;
+  --color-plum-header: #3E1F34;
+  --color-mauve: #7A6572;
+  --color-champagne: #C89B3C;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #FFF9F6;
+    color: #2D1B2E;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-serif);
+  }
+}
+
+.rose-gold-gradient {
+  background: linear-gradient(135deg, #DFA797 0%, #C58371 100%);
+}
+
+.rose-gold-metallic {
+  background: linear-gradient(135deg, #E7B8A8 0%, #C88B79 52%, #B57360 100%);
+}
+
+.hero-blush-surface {
+  background: radial-gradient(circle at 82% 20%, rgba(235, 198, 187, 0.55) 0%, rgba(255, 245, 241, 0.96) 55%, rgba(249, 232, 226, 0.9) 100%);
+}
+
+.viewport-rose-surface {
+  background: radial-gradient(circle at 50% 42%, #F6ECE9 0%, #EDE1DD 65%, #E7D8D3 100%);
+}
+
+/* Smooth hidden scrollbars for horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}

@@ -1,0 +1,10 @@
+{
+  "name": "GlamCraft Academy",
+  "short_name": "GlamCraft",
+  "description": "Luxury Online Salon & Beautician Academy — Fresh to Expert Makeup, 3D Tools Lab, Face Shape Guide, Hairstyles & Mehndi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9F6",
+  "theme_color": "#3D1F34",
+  "orientation": "portrait-primary"
+}

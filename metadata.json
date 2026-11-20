@@ -1,0 +1,6 @@
+{
+  "name": "GlamCraft Academy",
+  "description": "Luxury online beautician & makeup artistry academy featuring Fresh-to-Expert courses, interactive 3D makeup tools lab, face shape guides, hairstyle & Mehndi shorts, and a full YouTube CMS Admin Panel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

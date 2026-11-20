@@ -1,0 +1,797 @@
+import { AcademyDatabase, FaceShape } from '../types/academy';
+
+export interface FaceShapeGuideInfo {
+  shape: FaceShape;
+  tagline: string;
+  contourTip: string;
+  blushTip: string;
+  highlightTip: string;
+  proSecret: string;
+}
+
+export const FACE_SHAPE_GUIDES: Record<FaceShape, FaceShapeGuideInfo> = {
+  Oval: {
+    shape: 'Oval',
+    tagline: 'Balanced proportions with gently rounded jawline and forehead.',
+    contourTip: 'Lightly sculpt just beneath the cheekbones and along the outer temples to add subtle dimension without altering natural balance.',
+    blushTip: 'Sweep rose or peach blush across the apples of the cheeks, blending softly outward toward the upper ear.',
+    highlightTip: 'Tap champagne luminizer on the center of the forehead, bridge of the nose, tops of cheekbones, and chin tip.',
+    proSecret: 'Use an angled contour brush with feathered upward strokes so transitions look weightless under bridal flash photography.',
+  },
+  Round: {
+    shape: 'Round',
+    tagline: 'Equal face length and width with soft, youthful cheek fullness.',
+    contourTip: 'Create elongated structure by shading along the outer temples, beneath the cheekbones in an angled diagonal line, and softly under the jawline.',
+    blushTip: 'Apply blush slightly higher on the outer cheekbones and sweep diagonally upward toward the temples to lift the mid-face.',
+    highlightTip: 'Focus vertical illumination on the center forehead, down the nose bridge, and center of the chin to lengthen proportions.',
+    proSecret: 'Avoid placing bright blush right on the inner apples—keeping color slightly outward visibly refines cheek width.',
+  },
+  Square: {
+    shape: 'Square',
+    tagline: 'Defined, angular jawline paired with a broad, structured forehead.',
+    contourTip: 'Soften strong angles by buffing warm contour around the outer corners of the forehead and directly over the sharp corners of the jaw.',
+    blushTip: 'Diffuse soft pink blush in circular motions on the rounded center of the cheekbones to introduce gentle curves.',
+    highlightTip: 'Brighten the center forehead, Cupid’s bow, under-eye triangles, and center chin to draw focus inward.',
+    proSecret: 'Use a damp beauty blender over cream contour edges along the jaw so shadows melt seamlessly into the neck.',
+  },
+  Heart: {
+    shape: 'Heart',
+    tagline: 'Wider brow and cheekbone plane tapering smoothly to a delicate chin.',
+    contourTip: 'Balance upper width by shading the outer hairline temples and adding a whisper of contour right at the very tip of the chin.',
+    blushTip: 'Drape blush slightly lower along the outer curve of the cheeks to bring harmonious softness to the lower third.',
+    highlightTip: 'Illuminate the under-eyes, center nose bridge, and along the outer jawline corners to widen the lower profile subtly.',
+    proSecret: 'Pair softly arched brows with satin-finish lip gloss to naturally balance a delicate pointed chin.',
+  },
+  Diamond: {
+    shape: 'Diamond',
+    tagline: 'High, sculptural cheekbones with a narrower forehead and tapered chin.',
+    contourTip: 'Refine only the outermost apex of the cheekbones—skip temple shading to keep the upper forehead feeling open and luminous.',
+    blushTip: 'Place luminous blush right along the upper apples of the cheeks, blending horizontally rather than steeply upward.',
+    highlightTip: 'Highlight the broad center of the forehead, brow bone, under-eye inner corners, and chin to open narrower planes.',
+    proSecret: 'A satin liquid highlighter mixed into your concealer creates an effortless editorial glow on high diamond cheekbones.',
+  },
+  Long: {
+    shape: 'Long',
+    tagline: 'Graceful elongated proportions with slender cheekbones and jaw.',
+    contourTip: 'Visually shorten length by sweeping bronzer horizontally across the top hairline and directly underneath the tip of the chin.',
+    blushTip: 'Apply blush horizontally across the mid-cheeks and lightly across the nose bridge to introduce balanced horizontal width.',
+    highlightTip: 'Concentrate glow on the outer cheekbones and inner eye corners while keeping forehead and chin center matte.',
+    proSecret: 'Keep blush placement horizontal rather than diagonal to give long face structures a fresh, youthful harmony.',
+  },
+};
+
+export const INITIAL_ACADEMY_DATA: AcademyDatabase = {
+  courses: [
+    {
+      id: 'course_bridal_01',
+      title: 'Soft Glam Bridal Makeup - Step by Step',
+      instructor: 'Ananya Verma · Master Bridal Artist',
+      category: 'Makeup',
+      subCategory: 'Bridal Makeup',
+      level: 'Expert',
+      faceShapes: ['Oval', 'Heart', 'Round'],
+      rating: 4.9,
+      isPremium: true,
+      description:
+        'Master timeless luxury bridal artistry from luminous 16-hour skin prep to tear-proof soft smokey eyes, diffused cheek sculpting, and velvet rose lips.',
+      lessons: [
+        {
+          id: 'l_bridal_01',
+          title: 'Skin Prep & Prime',
+          youtubeVideoId: '5O0YDHiosD0',
+          duration: '10:15',
+          isPremium: false,
+          productsUsed: [
+            'Hyaluronic Barrier Serum',
+            'Illuminating Gripping Primer',
+            'Peach Under-Eye Color Corrector',
+            'Damp Teardrop Beauty Sponge',
+          ],
+          notes:
+            'Always massage hydrating serum into dry zones 5 minutes before primer so foundation never separates around the nose or smile lines.',
+        },
+        {
+          id: 'l_bridal_02',
+          title: 'Foundation & Concealing',
+          youtubeVideoId: 'M7lc1UVf-VE',
+          duration: '15:40',
+          isPremium: false,
+          productsUsed: [
+            'HD Satin Long-Wear Foundation',
+            'Full-Coverage Radiant Concealer',
+            'Flat-Top Foundation Brush',
+            'Finely Milled Translucent Powder',
+          ],
+          notes:
+            'Press foundation in thin micro-layers starting from the center of the face outward. Let concealer sit 30 seconds before blending for maximum crease-free coverage.',
+        },
+        {
+          id: 'l_bridal_03',
+          title: 'Soft Glam Bridal Makeup',
+          youtubeVideoId: 'dQw4w9WgXcQ',
+          duration: '32:40',
+          isPremium: false,
+          productsUsed: [
+            'Angled Contour Brush',
+            'Warm Cream Bronzer',
+            'Dusty Rose Satin Blush',
+            'Champagne Liquid Highlighter',
+          ],
+          notes:
+            'Layer cream contour underneath a light dusting of matte powder bronzer for flash-safe dimension that lasts through every bridal ceremony.',
+        },
+        {
+          id: 'l_bridal_04',
+          title: 'Eye Art & Lash Application',
+          youtubeVideoId: 'aqz-KE-bpKQ',
+          duration: '22:10',
+          isPremium: true,
+          productsUsed: [
+            'Tapered Eyeshadow Blending Brush',
+            'Rose-Taupe Neutral Palette',
+            'Waterproof Gel Liner',
+            'Silk Wispy Strip Lashes',
+          ],
+          notes:
+            'Measure lashes from the outer corner inward and wait 40 seconds until lash adhesive turns tacky before pressing onto the root line.',
+        },
+        {
+          id: 'l_bridal_05',
+          title: 'Lips, Blush & Setting',
+          youtubeVideoId: 'ScMzIvxBSi4',
+          duration: '14:50',
+          isPremium: true,
+          productsUsed: [
+            'Muted Plum-Rose Lip Liner',
+            'Velvet Matte Bridal Lipstick',
+            'Micro-Mist Bridal Setting Spray',
+            'Soft Powder Puff',
+          ],
+          notes:
+            'Overline only the center Cupid’s bow and bottom lip peak by 1mm, keeping outer corners crisp for a refined photographic pout.',
+        },
+      ],
+    },
+    {
+      id: 'course_color_02',
+      title: 'Advanced Color Theory & Correction',
+      instructor: 'Meera Kapoor · Editorial Director',
+      category: 'Makeup',
+      subCategory: 'Skin Prep & Color Correction',
+      level: 'Intermediate',
+      faceShapes: ['Oval', 'Square', 'Diamond', 'Long'],
+      rating: 4.9,
+      isPremium: true,
+      description:
+        'Decode warm, cool, neutral, and olive undertones with surgical precision. Neutralize hyperpigmentation, redness, and dark circles using micro-layers.',
+      lessons: [
+        {
+          id: 'l_color_01',
+          title: 'Decoding Undertones & Olive Skin',
+          youtubeVideoId: 'M7lc1UVf-VE',
+          duration: '12:20',
+          isPremium: false,
+          productsUsed: [
+            'Shade-Adjusting Pigment Drops',
+            'Stainless Mixing Palette',
+            'Natural Daylight Ring Mirror',
+          ],
+          notes:
+            'Always swatch foundation vertically across the jaw down onto the neck in indirect daylight to verify undertone harmony.',
+        },
+        {
+          id: 'l_color_02',
+          title: 'Peach vs. Orange Corrector Science',
+          youtubeVideoId: '5O0YDHiosD0',
+          duration: '14:05',
+          isPremium: false,
+          productsUsed: [
+            'Peach Corrector Pot',
+            'Deep Tangerine Corrector',
+            'Precision Concealer Brush',
+          ],
+          notes:
+            'Match corrector intensity strictly to depth of discoloration—too much orange creates a muddy cast beneath neutral foundation.',
+        },
+        {
+          id: 'l_color_03',
+          title: 'Neutralizing Redness & Blemishes',
+          youtubeVideoId: 'aqz-KE-bpKQ',
+          duration: '11:45',
+          isPremium: true,
+          productsUsed: [
+            'Sheer Mint Correcting Veil',
+            'Pinpoint Spot Concealing Brush',
+            'Oil-Control Setting Powder',
+          ],
+          notes:
+            'Apply green corrector only to pinpoint redness, blend edges invisibly, and tap concealer directly on top without swiping.',
+        },
+        {
+          id: 'l_color_04',
+          title: 'Custom Mixing Bridal Shades',
+          youtubeVideoId: 'ScMzIvxBSi4',
+          duration: '16:30',
+          isPremium: true,
+          productsUsed: [
+            'Blue Pigment Mixer',
+            'Golden Yellow Mixer',
+            'Dual-Ended Spatula',
+          ],
+          notes:
+            'A single drop of blue pigment instantly converts an overly warm foundation into a refined neutral-olive match.',
+        },
+        {
+          id: 'l_color_05',
+          title: 'Flashback-Proof Powder Balancing',
+          youtubeVideoId: 'dQw4w9WgXcQ',
+          duration: '13:15',
+          isPremium: true,
+          productsUsed: [
+            'Banana-Tinted Loose Powder',
+            'Translucent Pink Brightening Powder',
+            'Velour Triangle Puff',
+          ],
+          notes:
+            'Avoid high-silica HD powders under direct flash photography; choose micronized talc-free silk powders tinted to skin depth.',
+        },
+      ],
+    },
+    {
+      id: 'course_everyday_03',
+      title: 'Everyday No-Makeup Radiance',
+      instructor: 'Sana Siddiqui · Beauty Educator',
+      category: 'Makeup',
+      subCategory: 'Everyday / No-Makeup',
+      level: 'Beginner',
+      faceShapes: ['Oval', 'Round', 'Heart', 'Long'],
+      rating: 4.8,
+      isPremium: false,
+      description:
+        'Start your artistry journey with fresh, breathable 10-minute makeup. Build confidence with sheer skin tints, feathered brows, and effortless cream blush.',
+      lessons: [
+        {
+          id: 'l_every_01',
+          title: '5-Minute Morning Skin Prep',
+          youtubeVideoId: '5O0YDHiosD0',
+          duration: '08:40',
+          isPremium: false,
+          productsUsed: [
+            'Gel-Cream Moisturizer',
+            'Invisible Dewy SPF 50',
+            'Peptide Lip Balm',
+          ],
+          notes:
+            'Give sunscreen two full minutes to form an even film before tapping tinted moisturizer on top.',
+        },
+        {
+          id: 'l_every_02',
+          title: 'Sheer Skin Tint & Spot Concealing',
+          youtubeVideoId: 'M7lc1UVf-VE',
+          duration: '11:20',
+          isPremium: false,
+          productsUsed: [
+            'Illuminating Skin Tint',
+            'Damp Beauty Blender',
+            'Hydrating Cream Concealer',
+          ],
+          notes:
+            'Bounce a damp sponge gently around the perimeter so natural skin texture and freckles remain luminous.',
+        },
+        {
+          id: 'l_every_03',
+          title: 'Feathered Brows & Soft Mascara',
+          youtubeVideoId: 'ScMzIvxBSi4',
+          duration: '09:15',
+          isPremium: false,
+          productsUsed: [
+            'Clear Sculpting Brow Gel',
+            'Micro-Tip Brow Pencil',
+            'Ergonomic Eyelash Curler',
+            'Tubing Lengthening Mascara',
+          ],
+          notes:
+            'Pulse the eyelash curler three times from root to mid-lash for a lifted curve that opens the eyes without eyeliner.',
+        },
+        {
+          id: 'l_every_04',
+          title: 'Monochrome Cream Cheek & Lip',
+          youtubeVideoId: 'aqz-KE-bpKQ',
+          duration: '07:55',
+          isPremium: false,
+          productsUsed: [
+            'Rosewood Multi-Use Cream Stick',
+            'Stippling Cheek Brush',
+            'Sheer Berry Lip Oil',
+          ],
+          notes:
+            'Tap the same cream blush shade onto cheeks, eyelids, and lips for instant editorial cohesion.',
+        },
+      ],
+    },
+    {
+      id: 'course_base_04',
+      title: 'Dewy vs. Matte Base Architecture',
+      instructor: 'Ananya Verma · Master Bridal Artist',
+      category: 'Makeup',
+      subCategory: 'Dewy vs. Matte Base',
+      level: 'Beginner',
+      faceShapes: ['Oval', 'Round', 'Square', 'Heart', 'Diamond', 'Long'],
+      rating: 4.8,
+      isPremium: false,
+      description:
+        'Understand skin types from oily T-zones to dehydrated cheeks. Learn exactly how to build glass-skin radiance or velvet soft-matte bases that never cake.',
+      lessons: [
+        {
+          id: 'l_base_01',
+          title: 'Diagnosing Skin Type Before Priming',
+          youtubeVideoId: 'M7lc1UVf-VE',
+          duration: '09:50',
+          isPremium: false,
+          productsUsed: [
+            'Pore-Blurring Silicone Primer',
+            'Dewy Ceramide Mist',
+            'Blotting Rice Papers',
+          ],
+          notes:
+            'Zone-prime every client: mattify the T-zone and hydrate the outer perimeter rather than using one primer everywhere.',
+        },
+        {
+          id: 'l_base_02',
+          title: 'Glass-Skin Dewy Layering Method',
+          youtubeVideoId: '5O0YDHiosD0',
+          duration: '14:15',
+          isPremium: false,
+          productsUsed: [
+            'Liquid Pearl Luminizer',
+            'Serum Foundation',
+            'Flat-Top Foundation Brush',
+          ],
+          notes:
+            'Set only the smile lines, nose wings, and under-eyes with a whisper of powder so high points stay naturally dewy.',
+        },
+        {
+          id: 'l_base_03',
+          title: 'Cloud-Skin Soft Matte Finish',
+          youtubeVideoId: 'ScMzIvxBSi4',
+          duration: '13:40',
+          isPremium: false,
+          productsUsed: [
+            'Soft-Matte Velvet Foundation',
+            'Pressed Micro-Blur Powder',
+            'Velour Powder Puff',
+          ],
+          notes:
+            'Press powder into the back of your hand first to saturate the puff evenly—this eliminates patchy dry spots.',
+        },
+        {
+          id: 'l_base_04',
+          title: 'Humidity-Proof Longwear Sealing',
+          youtubeVideoId: 'aqz-KE-bpKQ',
+          duration: '10:30',
+          isPremium: false,
+          productsUsed: [
+            'Film-Forming Setting Spray',
+            'Hydrating Rosewater Mist',
+            'Beauty Blender Sponge',
+          ],
+          notes:
+            'Sandwich setting spray between cream layers and final powder to lock pigment for 14+ hours in warm climates.',
+        },
+      ],
+    },
+    {
+      id: 'course_eyes_05',
+      title: 'Eye Makeup Mastery: Cut Crease & Smokey',
+      instructor: 'Rhea Malhotra · Pro Eye Specialist',
+      category: 'Makeup',
+      subCategory: 'Eye Makeup Mastery',
+      level: 'Intermediate',
+      faceShapes: ['Oval', 'Heart', 'Diamond'],
+      rating: 4.9,
+      isPremium: true,
+      description:
+        'Elevate your eye artistry across hooded, almond, and deep-set eyes with seamless smokey gradients, crisp half-cut creases, halo shimmer, and winged liner.',
+      lessons: [
+        {
+          id: 'l_eye_01',
+          title: 'Mapping Hooded & Almond Creases',
+          youtubeVideoId: 'aqz-KE-bpKQ',
+          duration: '12:50',
+          isPremium: false,
+          productsUsed: [
+            'Matte Eye Primer',
+            'Tapered Blending Brush',
+            'Warm Taupe Transition Shadow',
+          ],
+          notes:
+            'Always map your transition shade while looking straight ahead into the mirror with relaxed eyes so color remains visible.',
+        },
+        {
+          id: 'l_eye_02',
+          title: 'Soft Espresso Smokey Eye',
+          youtubeVideoId: '5O0YDHiosD0',
+          duration: '18:20',
+          isPremium: true,
+          productsUsed: [
+            'Creamy Kohl Pencil',
+            'Pencil Smudge Brush',
+            'Deep Espresso Matte Shadow',
+          ],
+          notes:
+            'Build intensity from the lash line upward—never start dark shadow in the crease first.',
+        },
+        {
+          id: 'l_eye_03',
+          title: 'Precision Half-Cut Crease & Halo',
+          youtubeVideoId: 'M7lc1UVf-VE',
+          duration: '21:10',
+          isPremium: true,
+          productsUsed: [
+            'Flat Synthetic Cut-Crease Brush',
+            'Matte Light Concealer',
+            'Rose-Gold Pressed Foil Pigment',
+          ],
+          notes:
+            'Dot concealer near the center lash line and look upward to stamp your exact natural crease fold automatically.',
+        },
+        {
+          id: 'l_eye_04',
+          title: 'Razor-Sharp Foxy Winged Liner',
+          youtubeVideoId: 'ScMzIvxBSi4',
+          duration: '14:05',
+          isPremium: true,
+          productsUsed: [
+            'Waterproof Felt-Tip Liner',
+            'Angled Precision Liner Brush',
+            'Micellar Cleanup Cotton Swab',
+          ],
+          notes:
+            'Follow the upward angle of your lower lash line to find the most flattering wing trajectory for any eye shape.',
+        },
+      ],
+    },
+    {
+      id: 'course_party_06',
+      title: 'Party & Red-Carpet Evening Glam',
+      instructor: 'Meera Kapoor · Editorial Director',
+      category: 'Makeup',
+      subCategory: 'Party & Evening Glam',
+      level: 'Expert',
+      faceShapes: ['Square', 'Diamond', 'Round', 'Oval'],
+      rating: 4.9,
+      isPremium: true,
+      description:
+        'Create show-stopping evening glamour with sculpted cheekbones, dimensional metallic lids, fluttery individual lashes, and satin crimson or nude-rose lips.',
+      lessons: [
+        {
+          id: 'l_party_01',
+          title: 'Sculpted Cream Contouring',
+          youtubeVideoId: 'dQw4w9WgXcQ',
+          duration: '15:10',
+          isPremium: false,
+          productsUsed: [
+            'Cool-Neutral Contour Stick',
+            'Angled Contour Brush',
+            'Radiant Brightening Concealer',
+          ],
+          notes:
+            'Place cream contour slightly above the natural hollow of the cheek to create an immediate lifted, sculpted bone structure.',
+        },
+        {
+          id: 'l_party_02',
+          title: 'Champagne Wet-Look Shimmer Lids',
+          youtubeVideoId: 'aqz-KE-bpKQ',
+          duration: '16:45',
+          isPremium: true,
+          productsUsed: [
+            'Glitter Adhesive Primer',
+            'Champagne Diamond Topper',
+            'Individual Lash Clusters',
+          ],
+          notes:
+            'Press multidimensional shimmer toppers onto the center lid with your ring finger for maximal jewel-like reflectivity.',
+        },
+        {
+          id: 'l_party_03',
+          title: 'Ombre Velvet Rose & Crimson Lips',
+          youtubeVideoId: 'ScMzIvxBSi4',
+          duration: '11:25',
+          isPremium: true,
+          productsUsed: [
+            'Deep Berry Contour Lip Pencil',
+            'Satin Rose-Mauve Lipstick',
+            'Precision Lip Brush',
+          ],
+          notes:
+            'Blot the first layer through a single ply of tissue and reapply for red-carpet longevity through dinner and photography.',
+        },
+      ],
+    },
+  ],
+  shorts: [
+    {
+      id: 'short_01',
+      title: 'Braided Bridal Hairstyle',
+      category: 'Hairstyles',
+      subCategory: 'Bridal Braids',
+      youtubeVideoId: '5O0YDHiosD0',
+      duration: '00:58',
+      viewsLabel: '12k views',
+      isPremium: false,
+    },
+    {
+      id: 'short_02',
+      title: 'Intricate Bridal Mehndi',
+      category: 'Mehndi',
+      subCategory: 'Bridal Full-Hand',
+      youtubeVideoId: 'M7lc1UVf-VE',
+      duration: '01:12',
+      viewsLabel: '18.4k views',
+      isPremium: false,
+    },
+    {
+      id: 'short_03',
+      title: 'Dark Stain Mehndi Tips',
+      category: 'Mehndi',
+      subCategory: 'Bridal Tips',
+      youtubeVideoId: 'ScMzIvxBSi4',
+      duration: '00:49',
+      viewsLabel: '24k views',
+      isPremium: false,
+    },
+    {
+      id: 'short_04',
+      title: 'Textured Low Bridal Updo',
+      category: 'Hairstyles',
+      subCategory: 'Bridal Updos',
+      youtubeVideoId: 'aqz-KE-bpKQ',
+      duration: '01:05',
+      viewsLabel: '15.2k views',
+      isPremium: false,
+    },
+    {
+      id: 'short_05',
+      title: 'Modern Arabic Floral Vine',
+      category: 'Mehndi',
+      subCategory: 'Arabic',
+      youtubeVideoId: 'dQw4w9WgXcQ',
+      duration: '00:54',
+      viewsLabel: '19.8k views',
+      isPremium: true,
+    },
+    {
+      id: 'short_06',
+      title: 'Hollywood S-Wave Bridal Curls',
+      category: 'Hairstyles',
+      subCategory: 'Curls',
+      youtubeVideoId: '5O0YDHiosD0',
+      duration: '01:18',
+      viewsLabel: '31k views',
+      isPremium: true,
+    },
+    {
+      id: 'short_07',
+      title: 'Minimalist Lotus Finger Mehndi',
+      category: 'Mehndi',
+      subCategory: 'Minimalist',
+      youtubeVideoId: 'M7lc1UVf-VE',
+      duration: '00:46',
+      viewsLabel: '14.5k views',
+      isPremium: false,
+    },
+    {
+      id: 'short_08',
+      title: 'Pearl-Pinned Reception Bun',
+      category: 'Hairstyles',
+      subCategory: 'Buns',
+      youtubeVideoId: 'ScMzIvxBSi4',
+      duration: '01:02',
+      viewsLabel: '22.1k views',
+      isPremium: false,
+    },
+  ],
+  tools3D: [
+    {
+      id: 'tool_contour_brush',
+      name: 'Angled Contour Brush',
+      shortName: 'Contour Brush',
+      modelPreset: 'contour_brush',
+      bestFor: 'Cheekbone Contouring & Bronzing',
+      usageTip:
+        'Use sweeping upward motions along the cheekbones to define and blend contour or bronzer seamlessly.',
+      demoYoutubeId: '5O0YDHiosD0',
+      hotspots: [
+        {
+          id: 'hs_cb_bristles',
+          label: 'Synthetic Bristles',
+          detail: 'Ultra-soft beveled taklon fibers pick up both powder and cream contour evenly without absorbing excess product.',
+          careTip: 'Swirl weekly in lukewarm water with gentle brush soap; reshape flat while drying.',
+          anchor: [-0.28, 1.25, 0.12],
+          side: 'right',
+        },
+        {
+          id: 'hs_cb_ferrule',
+          label: 'Metal Ferrule',
+          detail: 'Double-crimped rose-gold aluminum ferrule secures bristles tightly to prevent shedding during vigorous blending.',
+          careTip: 'Keep water below the ferrule seam during washing to preserve the internal adhesive seal.',
+          anchor: [-0.02, 0.55, 0.14],
+          side: 'right',
+        },
+        {
+          id: 'hs_cb_handle',
+          label: 'Ergonomic Handle',
+          detail: 'Weighted satin-plum tapered handle with rose-gold balance inlay gives effortless feather-light wrist control.',
+          careTip: 'Hold midway down the handle for diffused airbrushed blending, or closer to the ferrule for sculpted precision.',
+          anchor: [0.34, -0.58, 0.12],
+          side: 'right',
+        },
+      ],
+    },
+    {
+      id: 'tool_beauty_blender',
+      name: 'Teardrop Beauty Blender',
+      shortName: 'Beauty Blender',
+      modelPreset: 'beauty_blender',
+      bestFor: 'Seamless Foundation & Under-Eye Blending',
+      usageTip:
+        'Always saturate with water and squeeze in a clean towel until damp, then bounce gently across skin—never drag.',
+      demoYoutubeId: 'M7lc1UVf-VE',
+      hotspots: [
+        {
+          id: 'hs_bb_tip',
+          label: 'Precision Tapered Tip',
+          detail: 'Reaches delicate inner eye corners, nose wings, and pinpoint blemishes with zero creasing.',
+          careTip: 'Use light stippling taps to press concealer into fine lines.',
+          anchor: [0.02, 0.92, 0.18],
+          side: 'right',
+        },
+        {
+          id: 'hs_bb_body',
+          label: 'Hydrophilic Latex-Free Foam',
+          detail: 'Open-cell micro-foam expands when damp so foundation sits on the surface instead of soaking inside.',
+          careTip: 'Wash after every 1–2 uses with solid cleanser and air-dry on an open stand.',
+          anchor: [0.42, 0.08, 0.2],
+          side: 'right',
+        },
+        {
+          id: 'hs_bb_base',
+          label: 'Rounded Blending Base',
+          detail: 'Covers cheeks, forehead, and jawline rapidly for an airbrushed skin-like finish.',
+          careTip: 'Roll the base gently over cream blush and contour edges to melt everything together.',
+          anchor: [0.22, -0.68, 0.18],
+          side: 'left',
+        },
+      ],
+    },
+    {
+      id: 'tool_foundation_brush',
+      name: 'Flat-Top Foundation Brush',
+      shortName: 'Foundation Brush',
+      modelPreset: 'foundation_brush',
+      bestFor: 'Full-Coverage Liquid & Cream Buffing',
+      usageTip:
+        'Buff liquid foundation in small circular motions starting at the center of the face and feathering outward toward the hairline.',
+      demoYoutubeId: 'aqz-KE-bpKQ',
+      hotspots: [
+        {
+          id: 'hs_fb_head',
+          label: 'Dense Flat-Top Bristles',
+          detail: 'Tightly packed cruelty-free fibers deliver streak-free medium-to-full coverage without brush marks.',
+          careTip: 'Press product into pores rather than painting side-to-side for a blurred finish.',
+          anchor: [0.0, 1.28, 0.18],
+          side: 'right',
+        },
+        {
+          id: 'hs_fb_ferrule',
+          label: 'Brushed Rose-Gold Ferrule',
+          detail: 'Reinforced wide collar maintains cylindrical density across thousands of buffing passes.',
+          careTip: 'Dry angled downward at 45° so moisture drains away from the ferrule.',
+          anchor: [0.08, 0.56, 0.18],
+          side: 'right',
+        },
+        {
+          id: 'hs_fb_handle',
+          label: 'Balanced Matte Handle',
+          detail: 'Anti-slip plum lacquer finish offers steady pressure control for cream foundations.',
+          careTip: 'Sanitize handle with 70% alcohol wipe between every bridal client.',
+          anchor: [0.08, -0.58, 0.14],
+          side: 'right',
+        },
+      ],
+    },
+    {
+      id: 'tool_eyelash_curler',
+      name: 'Precision Eyelash Curler',
+      shortName: 'Eyelash Curler',
+      modelPreset: 'eyelash_curler',
+      bestFor: 'Root-to-Tip Natural Lash Lift',
+      usageTip:
+        'Position at the base of clean, dry lashes before mascara. Gently pulse at the root, mid-length, and tips for a wide-awake C-curl.',
+      demoYoutubeId: 'ScMzIvxBSi4',
+      hotspots: [
+        {
+          id: 'hs_ec_pad',
+          label: 'Cushioned Silicone Pad',
+          detail: 'Hypoallergenic blush-pink elastomer pad lifts lashes smoothly without crimping or pinching.',
+          careTip: 'Wipe with alcohol daily and replace the silicone pad every 3 months.',
+          anchor: [0.0, 0.92, 0.18],
+          side: 'right',
+        },
+        {
+          id: 'hs_ec_hinge',
+          label: 'Calibrated Spring Hinge',
+          detail: 'Rose-gold stainless tension bar distributes even pressure across every eye shape.',
+          careTip: 'Never curl lashes after waterproof mascara has dried to prevent breakage.',
+          anchor: [0.1, 0.08, 0.14],
+          side: 'right',
+        },
+        {
+          id: 'hs_ec_loops',
+          label: 'Ergonomic Scissor Loops',
+          detail: 'Contoured dual finger rings stabilize your thumb and index finger for jitter-free curling.',
+          careTip: 'Rest your pinky gently on the client’s cheekbone for steady support.',
+          anchor: [0.35, -0.78, 0.1],
+          side: 'right',
+        },
+      ],
+    },
+    {
+      id: 'tool_eyeshadow_brush',
+      name: 'Tapered Eyeshadow Brush',
+      shortName: 'Eyeshadow Brush',
+      modelPreset: 'eyeshadow_brush',
+      bestFor: 'Diffused Crease Blending & Smokey Transitions',
+      usageTip:
+        'Use feather-light windshield-wiper strokes in the crease to diffuse transition shadows into a soft airbrushed gradient.',
+      demoYoutubeId: 'dQw4w9WgXcQ',
+      hotspots: [
+        {
+          id: 'hs_eb_dome',
+          label: 'Fluffy Tapered Dome',
+          detail: 'Airy domed tip hugs the natural orbital socket to blend harsh eyeshadow edges effortlessly.',
+          careTip: 'Tap off excess pigment on the back of your hand before touching the eyelid.',
+          anchor: [0.0, 1.32, 0.12],
+          side: 'right',
+        },
+        {
+          id: 'hs_eb_ferrule',
+          label: 'Slim Rose-Gold Ferrule',
+          detail: 'Precision-pinched collar keeps bristle flex supple for delicate eye-area blending.',
+          careTip: 'Use a dry microfiber color-switch pad between shades during live sessions.',
+          anchor: [0.06, 0.62, 0.12],
+          side: 'right',
+        },
+        {
+          id: 'hs_eb_handle',
+          label: 'Precision Artist Stem',
+          detail: 'Slender plum lacquer shaft lets you hold near the tail for whisper-soft blending pressure.',
+          careTip: 'Store upright in a clean brush cup to preserve the domed bristle crown.',
+          anchor: [0.08, -0.58, 0.1],
+          side: 'right',
+        },
+      ],
+    },
+  ],
+  monetization: {
+    adsEnabled: true,
+    monthlyPrice: '$9.99',
+    yearlyPrice: '$79.99',
+    proBenefits: [
+      'Unlock all Expert Bridal, Color Theory & Eye Mastery lessons',
+      '100% ad-free distraction-free studio learning experience',
+      'Downloadable bridal kit checklists & printable face-shape charts',
+      'Exclusive Pro Mehndi & Reception Hairstyle Shorts library',
+    ],
+    homeBannerText: 'Curated Salon Kit • Save 20% on Rose-Gold Pro Brushes',
+    homeBannerLink: '#pro-kit-offer',
+    homeAdsenseSlotId: 'ca-pub-glamcraft-home-01',
+    playerBannerText: 'Elevate Your Kit • Get 20% Off Luxury Brushes',
+    playerBannerLink: '#luxury-brushes',
+    playerAdsenseSlotId: 'ca-pub-glamcraft-player-02',
+    shortsBannerText: 'Bridal Season Essentials • Organic Henna Cones & Hair Pins',
+    shortsBannerLink: '#bridal-essentials',
+    shortsAdsenseSlotId: 'ca-pub-glamcraft-shorts-03',
+    customAdHtml: '',
+  },
+};
